@@ -27,45 +27,69 @@ void DisplayStruct(struct Student *s[], int size)
         cout << "---------------" << endl;
     }
 }
-void operation(int input)
+void bubbleSort(struct Student *s[],int length)
+{
+    for(int i=0;i<length-1;i++){
+        for(int j=i+1;j<length;j++){
+            if(s[j]->rollNumber<s[i]->rollNumber){
+                swap(s[i],s[j]);
+            }
+
+        }
+
+    }
+
+    DisplayStruct(s,length);
+}
+void InsertionSort(struct Student *s[],int length)
+{
+    for(int i=0;i<length;i++){
+        for(int j=i;j>0;j--){
+            if(s[j]->name<s[j-1]->name){
+                swap(s[j-1],s[j]);
+            }
+
+        }
+
+    }
+
+    DisplayStruct(s,length);
+}
+void MergeSort(struct Student *s[],int length)
+{
+}
+void operation(int input,Student *s[],int length)
 {
     switch (input)
     {
     case 1:
-        bubbleSort();
+        bubbleSort(s,length);
         break;
     case 2:
-        SelectionSort();
+        InsertionSort(s,length);
         break;
     case 3:
-        MergeSort();
+        MergeSort(s,length);
         break;
 
     default:
         break;
     }
 }
-void DisplayUserOption()
-{
+void DisplayUserOption(Student *s[], int lengthOfArr)
+{  
     int input;
     cout << "To sort the information according to rollNumber enter 1" << endl;
     cout << "To sort the information according to Student name enter 2" << endl;
     cout << "To sort the information according to SGPA 3" << endl;
     cin >> input;
-    operation(input);
+    operation(input,s,lengthOfArr);
 }
 
 // all code for sorting
 
-void bubbleSort(struct Student *s[])
-{
-}
-void SelectionSort(struct Student *s[])
-{
-}
-void MergeSort(struct Student *s[])
-{
-}
+
+
 // Driver Code
 int main()
 {
@@ -91,8 +115,8 @@ int main()
 
     // just displaying the struct information
 
-    DisplayStruct(s, count);
-    DisplayUserOption();
+    // DisplayStruct(s, count);
+    DisplayUserOption(s,count);
 
     return 0;
 }
