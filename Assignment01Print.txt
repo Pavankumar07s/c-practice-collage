@@ -1,0 +1,267 @@
+Name-Pavan kumar
+RollNo-28
+Class-It(B)
+
+
+---------------------------------Code----------------------------------
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Student
+{
+    string name;
+    int rollNumber;
+    float SGPA;
+};
+
+void StudentInput(int count, string studentName, int roll, float SGPA, Student *s[])
+{
+    s[count] = new Student;
+    s[count]->name = studentName;
+    s[count]->rollNumber = roll;
+    s[count]->SGPA = SGPA;
+    cout << "inserted" << endl;
+}
+
+void DisplayStruct(struct Student *s[], int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        cout << "Student Name: " << s[i]->name << endl;
+        cout << "Roll Number: " << s[i]->rollNumber << endl;
+        cout << "SGPA: " << s[i]->SGPA << endl;
+        cout << "---------------" << endl;
+    }
+}
+void bubbleSort(struct Student *s[], int length)
+{
+    for (int i = 0; i < length - 1; i++)
+    {
+        for (int j = i + 1; j < length; j++)
+        {
+            if (s[j]->rollNumber < s[i]->rollNumber)
+            {
+                swap(s[i], s[j]);
+            }
+        }
+    }
+
+    DisplayStruct(s, length);
+}
+void InsertionSort(struct Student *s[], int length)
+{
+    for (int i = 1; i < length; i++)
+    {
+        Student *key = s[i];
+        int j = i - 1;
+        while (j >= 0 && s[j]->name > key->name)
+        {
+            s[j + 1] = s[j];
+            j = j - 1;
+        }
+        s[j + 1] = key;
+    }
+
+    DisplayStruct(s, length);
+}
+int partition(struct Student *s[], int low, int high)
+{
+    float pivot = s[low]->SGPA;
+    int i = low + 1;
+    int j = high;
+
+    while (true)
+    {
+        while (i <= high && s[i]->SGPA <= pivot)
+            i++;
+        while (j >= low && s[j]->SGPA > pivot)
+            j--;
+        if (i < j)
+            swap(s[i], s[j]);
+        else
+            break;
+    }
+    swap(s[low], s[j]);
+    return j;
+}
+
+void QuickSort(struct Student *s[], int low, int high)
+{
+    if (low < high)
+    {
+        int pivot = partition(s, low, high);
+        QuickSort(s, low, pivot - 1);
+        QuickSort(s, pivot + 1, high);
+    }
+}
+
+void operation(int input, Student *s[], int length)
+{
+    switch (input)
+    {
+    case 1:
+        bubbleSort(s, length);
+        break;
+    case 2:
+        InsertionSort(s, length);
+        break;
+    case 3:
+        QuickSort(s, 0, length - 1);
+        DisplayStruct(s, length);
+        break;
+    default:
+        cout << "Invalid input. Please select a valid option." << endl;
+        break;
+    }
+}
+void DisplayUserOption(Student *s[], int lengthOfArr)
+{
+    int input;
+    cout << "Select Sorting Option:" << endl;
+    cout << "1. Sort by Roll Number" << endl;
+    cout << "2. Sort by Student Name" << endl;
+    cout << "3. Sort by SGPA" << endl;
+    cin >> input;
+    operation(input, s, lengthOfArr);
+}
+
+// Driver Code
+int main()
+{
+    Student *s[20];
+    int count = 0, response = 0;
+    do
+    {
+
+        cout << "Enter the name of Student: ";
+        string studentName;
+        cin >> studentName;
+        cout << "Enter the roll number: ";
+        int roll;
+        cin >> roll;
+        cout << "Enter the SGPA of student: ";
+        float SGPA;
+        cin >> SGPA;
+        StudentInput(count, studentName, roll, SGPA, s);
+        count++;
+        cout << "To continue inserting student records, enter 1. To exit, enter 0: ";
+        cin >> response;
+    } while (response != 0);
+
+    DisplayUserOption(s, count);
+
+    // Free allocated memory
+    for (int i = 0; i < count; i++)
+    {
+        delete s[i];
+    }
+
+    return 0;
+}
+
+
+--------------------------------Result----------------------------------------------
+Enter the name of Student: pavan
+Enter the roll number: 28
+Enter the SGPA of student: 9.11
+inserted
+To continue inserting student records, enter 1. To exit, enter 0: 1
+Enter the name of Student: nitika
+Enter the roll number: 26
+Enter the SGPA of student: 10
+inserted
+To continue inserting student records, enter 1. To exit, enter 0: 1
+Enter the name of Student: pankaj
+Enter the roll number: 27
+Enter the SGPA of student: 9.4
+inserted
+To continue inserting student records, enter 1. To exit, enter 0: 1
+Enter the name of Student: rahit
+Enter the roll number: 22
+Enter the SGPA of student: 9.6
+inserted
+To continue inserting student records, enter 1. To exit, enter 0: 1
+Enter the name of Student: pranav
+Enter the roll number: 31
+Enter the SGPA of student: 9.5
+inserted
+To continue inserting student records, enter 1. To exit, enter 0: 1
+Enter the name of Student: rahul
+Enter the roll number: 35
+Enter the SGPA of student: 9.4
+inserted
+To continue inserting student records, enter 1. To exit, enter 0: 1
+Enter the name of Student: piyush 
+Enter the roll number: 30
+Enter the SGPA of student: 9.3
+inserted
+To continue inserting student records, enter 1. To exit, enter 0: 1
+Enter the name of Student: mohit 
+Enter the roll number: 24
+Enter the SGPA of student: 10
+inserted
+To continue inserting student records, enter 1. To exit, enter 0: 1
+Enter the name of Student: mukul
+Enter the roll number: 34
+Enter the SGPA of student: 8.9
+inserted
+To continue inserting student records, enter 1. To exit, enter 0: 1
+Enter the name of Student: rahulTripathi
+Enter the roll number: 36
+Enter the SGPA of student: 9.1
+inserted
+To continue inserting student records, enter 1. To exit, enter 0: 1
+Enter the name of Student: prince
+Enter the roll number: 21
+Enter the SGPA of student: 8
+inserted
+To continue inserting student records, enter 1. To exit, enter 0: 0
+Select Sorting Option:
+1. Sort by Roll Number
+2. Sort by Student Name
+3. Sort by SGPA
+3
+Student Name: prince
+Roll Number: 21
+SGPA: 8
+---------------
+Student Name: mukul
+Roll Number: 34
+SGPA: 8.9
+---------------
+Student Name: rahulTripathi
+Roll Number: 36
+SGPA: 9.1
+---------------
+Student Name: pavan
+Roll Number: 28
+SGPA: 9.11
+---------------
+Student Name: piyush
+Roll Number: 30
+SGPA: 9.3
+---------------
+Student Name: rahul
+Roll Number: 35
+SGPA: 9.4
+---------------
+Student Name: pankaj
+Roll Number: 27
+SGPA: 9.4
+---------------
+Student Name: pranav
+Roll Number: 31
+SGPA: 9.5
+---------------
+Student Name: rahit
+Roll Number: 22
+SGPA: 9.6
+---------------
+Student Name: nitika
+Roll Number: 26
+SGPA: 10
+---------------
+Student Name: mohit
+Roll Number: 24
+SGPA: 10
+---------------
