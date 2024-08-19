@@ -1,4 +1,4 @@
-# c-practice-collage
+# c-practice-college
   1.assignment1
 
 
