@@ -93,6 +93,9 @@ void operation(int input, Student *s[], int length)
 {
     switch (input)
     {
+    case 0:
+        DisplayStruct(s, length);
+        break;
     case 1:
         bubbleSort(s, length);
         break;
@@ -112,6 +115,7 @@ void DisplayUserOption(Student *s[], int lengthOfArr)
 {
     int input;
     cout << "Select Sorting Option:" << endl;
+    cout << "0. display the Struct" << endl;
     cout << "1. Sort by Roll Number" << endl;
     cout << "2. Sort by Student Name" << endl;
     cout << "3. Sort by SGPA" << endl;

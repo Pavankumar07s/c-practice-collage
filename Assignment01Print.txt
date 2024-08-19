@@ -161,101 +161,109 @@ int main()
 
 
 --------------------------------Result----------------------------------------------
-Enter the name of Student: pavan
-Enter the roll number: 28
-Enter the SGPA of student: 9.11
-inserted
-To continue inserting student records, enter 1. To exit, enter 0: 1
-Enter the name of Student: nitika
-Enter the roll number: 26
-Enter the SGPA of student: 10
-inserted
-To continue inserting student records, enter 1. To exit, enter 0: 1
-Enter the name of Student: pankaj
-Enter the roll number: 27
-Enter the SGPA of student: 9.4
-inserted
-To continue inserting student records, enter 1. To exit, enter 0: 1
-Enter the name of Student: rahit
-Enter the roll number: 22
-Enter the SGPA of student: 9.6
-inserted
-To continue inserting student records, enter 1. To exit, enter 0: 1
-Enter the name of Student: pranav
-Enter the roll number: 31
-Enter the SGPA of student: 9.5
-inserted
-To continue inserting student records, enter 1. To exit, enter 0: 1
-Enter the name of Student: rahul
-Enter the roll number: 35
-Enter the SGPA of student: 9.4
-inserted
-To continue inserting student records, enter 1. To exit, enter 0: 1
-Enter the name of Student: piyush 
-Enter the roll number: 30
-Enter the SGPA of student: 9.3
-inserted
-To continue inserting student records, enter 1. To exit, enter 0: 1
-Enter the name of Student: mohit 
-Enter the roll number: 24
-Enter the SGPA of student: 10
-inserted
-To continue inserting student records, enter 1. To exit, enter 0: 1
-Enter the name of Student: mukul
-Enter the roll number: 34
-Enter the SGPA of student: 8.9
-inserted
-To continue inserting student records, enter 1. To exit, enter 0: 1
-Enter the name of Student: rahulTripathi
-Enter the roll number: 36
-Enter the SGPA of student: 9.1
-inserted
-To continue inserting student records, enter 1. To exit, enter 0: 1
-Enter the name of Student: prince
-Enter the roll number: 21
-Enter the SGPA of student: 8
+Enter the name of Student: 
+
+ Pavan
+ 28
+ 9.11
+ 1
+ nitika
+ 26
+ 10
+ 1
+ mohit
+ 2Enter the roll number: Enter the SGPA of student: inserted
+To continue inserting student records, enter 1. To exit, enter 0: Enter the name of Student: Enter the roll number: Enter the SGPA of student: inserted
+To continue inserting student records, enter 1. To exit, enter 0: Enter the name of Student: Enter the roll number: 4
+ 10
+ 1
+ pranav
+ 31
+ 9.5
+ 1
+ piyush
+ 29
+ 9.23
+ 1
+Enter the SGPA of student: inserted
+To continue inserting student records, enter 1. To exit, enter 0: Enter the name of Student: Enter the roll number: Enter the SGPA of student: inserted
+To continue inserting student records, enter 1. To exit, enter 0: Enter the name of Student: Enter the roll number: Enter the SGPA of student: inserted
+To continue inserting student records, enter 1. To exit, enter 0: Enter the name of Student:  rahul
+ 35
+ 8.5
+ 1
+ chaudhry 
+ 34
+ 9.23
+ 1
+ rohit
+Enter the roll number: Enter the SGPA of student: inserted
+To continue inserting student records, enter 1. To exit, enter 0: Enter the name of Student: Enter the roll number: Enter the SGPA of student: inserted
+To continue inserting student records, enter 1. To exit, enter 0: Enter the name of Student: Enter the roll number:  25
+ 9.02
+ 1
+ ratanakar
+ 56
+ 8.36
+ 1
+ mohitSingh
+ Enter the SGPA of student: inserted
+To continue inserting student records, enter 1. To exit, enter 0: Enter the name of Student: Enter the roll number: Enter the SGPA of student: inserted
+To continue inserting student records, enter 1. To exit, enter 0: Enter the name of Student: Enter the roll number: 32
+ 8.22
+ 1
+ bulu
+ 55
+ 8.3
+ 1
+ chulllu
+ 55
+ 7.5
+ 1Enter the SGPA of student: inserted
+To continue inserting student records, enter 1. To exit, enter 0: Enter the name of Student: Enter the roll number: Enter the SGPA of student: inserted
+To continue inserting student records, enter 1. To exit, enter 0: Enter the name of Student: Enter the roll number: Enter the SGPA of student: inserted
+To continue inserting student records, enter 1. To exit, enter 0: 
+ falut
+ 26
+ 5.6
+ 1
+ abhinav
+ 21
+ 6.9
+ 1
+ hinata
+ Enter the name of Student: Enter the roll number: Enter the SGPA of student: inserted
+To continue inserting student records, enter 1. To exit, enter 0: Enter the name of Student: Enter the roll number: Enter the SGPA of student: inserted
+To continue inserting student records, enter 1. To exit, enter 0: Enter the name of Student: Enter the roll number: 01
+ 4.5
+ 1
+ renkugu
+ 02
+ 6.3
+ 1
+ narutoUzamaki
+ 63Enter the SGPA of student: inserted
+To continue inserting student records, enter 1. To exit, enter 0: Enter the name of Student: Enter the roll number: Enter the SGPA of student: inserted
+To continue inserting student records, enter 1. To exit, enter 0: Enter the name of Student: Enter the roll number: 
+ 9.5
+ 1
+ uchihaSaske
+10
+ 10
+ 1
+ uchihaItachi
+ 07
+Enter the SGPA of student: inserted
+To continue inserting student records, enter 1. To exit, enter 0: Enter the name of Student: Enter the roll number: Enter the SGPA of student: inserted
+To continue inserting student records, enter 1. To exit, enter 0: Enter the name of Student: Enter the roll number: Enter the SGPA of student:  9.9
 inserted
 To continue inserting student records, enter 1. To exit, enter 0: 0
-Select Sorting Option:
-1. Sort by Roll Number
-2. Sort by Student Name
-3. Sort by SGPA
-3
-Student Name: prince
-Roll Number: 21
-SGPA: 8
----------------
-Student Name: mukul
-Roll Number: 34
-SGPA: 8.9
----------------
-Student Name: rahulTripathi
-Roll Number: 36
-SGPA: 9.1
----------------
-Student Name: pavan
+To continue inserting student records, enter 1. To exit, enter 0: 0
+
+1.Display Struct
+Student Name: Pavan
 Roll Number: 28
 SGPA: 9.11
----------------
-Student Name: piyush
-Roll Number: 30
-SGPA: 9.3
----------------
-Student Name: rahul
-Roll Number: 35
-SGPA: 9.4
----------------
-Student Name: pankaj
-Roll Number: 27
-SGPA: 9.4
----------------
-Student Name: pranav
-Roll Number: 31
-SGPA: 9.5
----------------
-Student Name: rahit
-Roll Number: 22
-SGPA: 9.6
 ---------------
 Student Name: nitika
 Roll Number: 26
@@ -265,3 +273,314 @@ Student Name: mohit
 Roll Number: 24
 SGPA: 10
 ---------------
+Student Name: pranav
+Roll Number: 31
+SGPA: 9.5
+---------------
+Student Name: piyush
+Roll Number: 29
+SGPA: 9.23
+---------------
+Student Name: rahul
+Roll Number: 35
+SGPA: 8.5
+---------------
+Student Name: chaudhry
+Roll Number: 34
+SGPA: 9.23
+---------------
+Student Name: rohit
+Roll Number: 25
+SGPA: 9.02
+---------------
+Student Name: ratanakar
+Roll Number: 56
+SGPA: 8.36
+---------------
+Student Name: mohitSingh
+Roll Number: 32
+SGPA: 8.22
+---------------
+Student Name: bulu
+Roll Number: 55
+SGPA: 8.3
+---------------
+Student Name: chulllu
+Roll Number: 55
+SGPA: 7.5
+---------------
+Student Name: falut
+Roll Number: 26
+SGPA: 5.6
+---------------
+Student Name: abhinav
+Roll Number: 21
+SGPA: 6.9
+---------------
+Student Name: hinata
+Roll Number: 1
+SGPA: 4.5
+---------------
+Student Name: renkugu
+Roll Number: 2
+SGPA: 6.3
+---------------
+Student Name: narutoUzamaki
+Roll Number: 63
+SGPA: 9.5
+---------------
+Student Name: uchihaSaske
+Roll Number: 10
+SGPA: 10
+---------------
+Student Name: uchihaItachi
+Roll Number: 7
+SGPA: 9.9
+---------------
+
+Select Sorting Option:
+1. Sort by Roll Number
+2. Sort by Student Name
+3. Sort by SGPA
+1
+Student Name: hinata
+Roll Number: 1
+SGPA: 4.5
+---------------
+Student Name: renkugu
+Roll Number: 2
+SGPA: 6.3
+---------------
+Student Name: uchihaItachi
+Roll Number: 7
+SGPA: 9.9
+---------------
+Student Name: uchihaSaske
+Roll Number: 10
+SGPA: 10
+---------------
+Student Name: abhinav
+Roll Number: 21
+SGPA: 6.9
+---------------
+Student Name: mohit
+Roll Number: 24
+SGPA: 10
+---------------
+Student Name: rohit
+Roll Number: 25
+SGPA: 9.02
+---------------
+Student Name: falut
+Roll Number: 26
+SGPA: 5.6
+---------------
+Student Name: nitika
+Roll Number: 26
+SGPA: 10
+---------------
+Student Name: Pavan
+Roll Number: 28
+SGPA: 9.11
+---------------
+Student Name: piyush
+Roll Number: 29
+SGPA: 9.23
+---------------
+Student Name: pranav
+Roll Number: 31
+SGPA: 9.5
+---------------
+Student Name: mohitSingh
+Roll Number: 32
+SGPA: 8.22
+---------------
+Student Name: chaudhry
+Roll Number: 34
+SGPA: 9.23
+---------------
+Student Name: rahul
+Roll Number: 35
+SGPA: 8.5
+---------------
+Student Name: bulu
+Roll Number: 55
+SGPA: 8.3
+---------------
+Student Name: chulllu
+Roll Number: 55
+SGPA: 7.5
+---------------
+Student Name: ratanakar
+Roll Number: 56
+SGPA: 8.36
+---------------
+Student Name: narutoUzamaki
+Roll Number: 63
+SGPA: 9.5
+---------------
+
+Select Sorting Option:
+1. Sort by Roll Number
+2. Sort by Student Name
+3. Sort by SGPA
+2
+Student Name: Pavan
+Roll Number: 28
+SGPA: 9.11
+---------------
+Student Name: abhinav
+Roll Number: 21
+SGPA: 6.9
+---------------
+Student Name: bulu
+Roll Number: 55
+SGPA: 8.3
+---------------
+Student Name: chaudhry
+Roll Number: 34
+SGPA: 9.23
+---------------
+Student Name: chulllu
+Roll Number: 55
+SGPA: 7.5
+---------------
+Student Name: falut
+Roll Number: 26
+SGPA: 5.6
+---------------
+Student Name: hinata
+Roll Number: 1
+SGPA: 4.5
+---------------
+Student Name: mohit
+Roll Number: 24
+SGPA: 10
+---------------
+Student Name: mohitSingh
+Roll Number: 32
+SGPA: 8.22
+---------------
+Student Name: narutoUzamaki
+Roll Number: 63
+SGPA: 9.5
+---------------
+Student Name: nitika
+Roll Number: 26
+SGPA: 10
+---------------
+Student Name: piyush
+Roll Number: 29
+SGPA: 9.23
+---------------
+Student Name: pranav
+Roll Number: 31
+SGPA: 9.5
+---------------
+Student Name: rahul
+Roll Number: 35
+SGPA: 8.5
+---------------
+Student Name: ratanakar
+Roll Number: 56
+SGPA: 8.36
+---------------
+Student Name: renkugu
+Roll Number: 2
+SGPA: 6.3
+---------------
+Student Name: rohit
+Roll Number: 25
+SGPA: 9.02
+---------------
+Student Name: uchihaItachi
+Roll Number: 7
+SGPA: 9.9
+---------------
+Student Name: uchihaSaske
+Roll Number: 10
+SGPA: 10
+---------------
+
+Select Sorting Option:
+1. Sort by Roll Number
+2. Sort by Student Name
+3. Sort by SGPA
+3
+Student Name: hinata
+Roll Number: 1
+SGPA: 4.5
+---------------
+Student Name: falut
+Roll Number: 26
+SGPA: 5.6
+---------------
+Student Name: renkugu
+Roll Number: 2
+SGPA: 6.3
+---------------
+Student Name: abhinav
+Roll Number: 21
+SGPA: 6.9
+---------------
+Student Name: chulllu
+Roll Number: 55
+SGPA: 7.5
+---------------
+Student Name: mohitSingh
+Roll Number: 32
+SGPA: 8.22
+---------------
+Student Name: bulu
+Roll Number: 55
+SGPA: 8.3
+---------------
+Student Name: ratanakar
+Roll Number: 56
+SGPA: 8.36
+---------------
+Student Name: rahul
+Roll Number: 35
+SGPA: 8.5
+---------------
+Student Name: rohit
+Roll Number: 25
+SGPA: 9.02
+---------------
+Student Name: Pavan
+Roll Number: 28
+SGPA: 9.11
+---------------
+Student Name: piyush
+Roll Number: 29
+SGPA: 9.23
+---------------
+Student Name: chaudhry
+Roll Number: 34
+SGPA: 9.23
+---------------
+Student Name: narutoUzamaki
+Roll Number: 63
+SGPA: 9.5
+---------------
+Student Name: pranav
+Roll Number: 31
+SGPA: 9.5
+---------------
+Student Name: uchihaItachi
+Roll Number: 7
+SGPA: 9.9
+---------------
+Student Name: uchihaSaske
+Roll Number: 10
+SGPA: 10
+---------------
+Student Name: mohit
+Roll Number: 24
+SGPA: 10
+---------------
+Student Name: nitika
+Roll Number: 26
+SGPA: 10
+---------------
+
