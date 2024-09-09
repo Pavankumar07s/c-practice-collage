@@ -53,7 +53,6 @@ class Stack {
 
         if (newNode == null) {
             System.out.println("\nStack overflow");
-            return;
         }
         newNode.next = head;
         head = newNode;
