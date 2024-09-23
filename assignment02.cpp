@@ -1,145 +1,255 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-// Node class definition
-class Node
-{
-public:
-    char Data;
-    Node *next;
 
-    Node(char new_data)
-    {
-        this->Data = new_data;
-        this->next = nullptr;
-    }
+struct node
+{
+    char data;
+    node *next;
 };
 
-// Stack class definition
-class Stack
+struct MyStack
 {
-private:
-    Node *head;
-
-public:
-    Stack()
+    node *top;
+    MyStack()
     {
-        this->head = nullptr;
+        top = NULL;
     }
-
+    void push(char value)
+    {
+        node *newnode = new node();
+        newnode->data = value;
+        newnode->next = top;
+        top = newnode;
+    }
     bool isEmpty()
     {
-        return head == nullptr;
+        return top == NULL;
     }
-
-    void push(char new_data)
-    {
-        Node *newNode = new Node(new_data);
-
-        if (newNode == nullptr)
-        {
-            cout << "\nStack overflow";
-            return;
-        }
-        newNode->next = head;
-        head = newNode;
-    }
-
     char pop()
     {
         if (isEmpty())
         {
-            cout << "\nStack underflow";
-            return ' ';
+            cout << "UNDERFLOW !!!" << endl;
+            return -1;
         }
-        else
-        {
-            Node *temp = head;
-            head = head->next;
-            char poppedData = temp->Data;
-            delete temp;
-            return poppedData;
-        }
+        node *temp = top;
+        char popValue = temp->data;
+        top = top->next;
+        delete temp;
+        return popValue;
     }
-
     char peek()
     {
         if (isEmpty())
         {
-
-            return ' ';
+            cout << "Stack is empty" << endl;
+            return -1;
         }
-        else
-        {
-            return head->Data;
-        }
-    }
-
-    void display()
-    {
-        Node *temp = head;
-
-        while (temp != nullptr)
-        {
-            cout << temp->Data << "->";
-            temp = temp->next;
-        }
-        cout << endl;
+        return top->data;
     }
 };
 
-int main()
+bool isOperator(char ch)
 {
-    Stack stack;
+    return (ch == '+' || ch == '-' || ch == '*' || ch == '/');
+}
 
-    // stack.push(0);
-    // stack.push(1);
-    // stack.push(2);
-    // stack.push(3);
-    // stack.push(4);
-    // stack.push(5);
-    // stack.push(6);
+int precedence(char op)
+{
+    if (op == '+' || op == '-')
+        return 1;
+    else if (op == '*' || op == '/')
+        return 2;
+    return 0;
+}
 
-    // cout << "Peek element is: " << stack.peek() <<endl;
-
-    // int poppedElement = stack.pop();
-    // cout << "Removed the Top element: " << poppedElement << endl;
-
-    // int peekElement = stack.peek();
-    // cout << "Peek element is: " << peekElement << endl;
-
-    // cout << "Printing all elements: ";
-    // stack.display();
-
-    string infix = "a+b*c+d";
-    string postfix = "";
-    for (int i = 0; i < infix.size(); i++)
+string infixtoprefix(string infix)
+{
+    reverse(infix.begin(), infix.end());
+    for (int i = 0; i < infix.length(); i++)
     {
-        if (infix[i] != '+' && infix[i] != '-' && infix[i] != '*' && infix[i] != '/')
+        if (infix[i] == '(')
         {
-            postfix += infix[i];
+            infix[i] = ')';
+        }
+        else if (infix[i] == ')')
+        {
+            infix[i] = '(';
+        }
+    }
+    string postfix = infixtopostfix(infix);
+    reverse(postfix.begin(), postfix.end());
+    return postfix;
+}
+
+string infixtopostfix(string infix)
+{
+    MyStack s;
+    string postfix = "";
+    for (char &ch : infix)
+    {
+        if (isalnum(ch))
+        {
+            postfix += ch;
+        }
+        else if (ch == '(')
+        {
+            s.push(ch);
+        }
+        else if (ch == ')')
+        {
+            while (!s.isEmpty() && s.peek() != '(')
+            {
+                postfix += s.pop();
+            }
+            if (!s.isEmpty())
+            {
+                s.pop();
+            }
+        }
+        else if (isOperator(ch))
+        {
+            while (!s.isEmpty() && precedence(s.peek()) >= precedence(ch))
+            {
+                postfix += s.pop();
+            }
+            s.push(ch);
+        }
+    }
+    while (!s.isEmpty())
+    {
+        postfix += s.pop();
+    }
+    return postfix;
+}
+int evalPostFix(string postfix)
+{
+    stack<int> eval;
+    for (char &ch : postfix)
+    {
+        if (isdigit(ch))
+        {
+            eval.push(ch - '0');
         }
         else
         {
-            if (stack.isEmpty())
+            int operand2 = eval.top();
+            eval.pop();
+            int operand1 = eval.top();
+            eval.pop();
+            switch (ch)
             {
-                stack.push(infix[i]);
-            }
-            else if (stack.peek()>infix[i])
-            {
-                while (!stack.isEmpty())
+            case '+':
+                eval.push(operand1 + operand2);
+                break;
+            case '-':
+                eval.push(operand1 - operand2);
+                break;
+            case '*':
+                eval.push(operand1 * operand2);
+                break;
+            case '/':
+                if (operand2 == 0)
                 {
-                    char tempOperator = stack.pop();
-                    postfix += tempOperator;
+                    cout << "denominator is zero!!!!" << endl;
+                    return -1;
                 }
+                eval.push(operand1 / operand2);
+                break;
             }
-
-            stack.push(infix[i]);
         }
     }
+    return eval.top();
+}
 
-    for (int i = 0; i < postfix.size(); i++)
+int evalprefix(string prefix)
+{
+    stack<int> eval;
+    for (int i = prefix.length() - 1; i >= 0; i--)
     {
-        cout << postfix[i];
+        if (isdigit(prefix[i]))
+        {
+            eval.push(prefix[i] - '0');
+        }
+        else
+        {
+            int operand1 = eval.top();
+            eval.pop();
+            int operand2 = eval.top();
+            eval.pop();
+            switch (prefix[i])
+            {
+            case '+':
+                eval.push(operand1 + operand2);
+                break;
+            case '-':
+                eval.push(operand1 - operand2);
+                break;
+            case '*':
+                eval.push(operand1 * operand2);
+                break;
+            case '/':
+                eval.push(operand1 / operand2);
+                break;
+            }
+        }
     }
+    return eval.top();
+}
+
+int main()
+{
+    int choice;
+    string infix, postfix, prefix, expression;
+
+    do
+    {
+        cout << "-------------menu----------------" << endl;
+        cout << "1. Convert Infix to Postfix" << endl;
+        cout << "2. Convert Infix to Prefix" << endl;
+        cout << "3. Evaluate Postfix Expression" << endl;
+        cout << "4. Evaluate Prefix Expression" << endl;
+        cout << "5. Exit" << endl;
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice)
+        {
+        case 1:
+            cout << "Enter infix expression: ";
+            cin >> infix;
+            postfix = infixtopostfix(infix);
+            cout << "Postfix Expression: " << postfix << endl;
+            break;
+
+        case 2:
+            cout << "Enter infix expression: ";
+            cin >> infix;
+            prefix = infixtoprefix(infix);
+            cout << "Prefix Expression: " << prefix << endl;
+            break;
+
+        case 3:
+            cout << "Enter postfix expression: ";
+            cin >> expression;
+            cout << "Postfix Evaluation Result: " << evalPostFix(expression) << endl;
+            break;
+
+        case 4:
+            cout << "Enter prefix expression: ";
+            cin >> expression;
+            cout << "Prefix Evaluation Result: " << evalprefix(expression) << endl;
+            break;
+
+        case 5:
+            cout << "Exiting program." << endl;
+            break;
+
+        default:
+            cout << "Invalid choice. Please try again." << endl;
+            break;
+        }
+    } while (choice != 5);
+
     return 0;
 }
